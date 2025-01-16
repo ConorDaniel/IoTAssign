@@ -31,9 +31,9 @@ Work arounds were required.
 
     See programmes: PiHere.py and SubAlertPi.py
 
-3) RSSI Signal Strength & Blynk Diplay
+3) RSSI Signal Strength, Blynk Diplay and Blynk App Alert
 
-   Again, two programmes were involved:
+   Again, two python programmes were involved:
    
    I got the MAC address for each sensor from the Android app provided by the vendor (WIT Motion) 
    Through a bit (a lot) of trial and error, I found that by using the bluetooth controls built into the R-PI, I could scan for the target MAC and connect (not couple), and then get an RSSI reading
@@ -43,8 +43,10 @@ Work arounds were required.
    The second programme takes the last RSSI value from the log and transmits this to Blynk.  Blynk displays a gauge with the signal strenght. 
 
    Note that I did try to combine the two programmes, but when I did, the disconnect/reconnect and subsequent transmission to Blynk became really slow. Use of a separate blynk message programme from the log eliminated that lag.
-   Blynk then gives a visual representation of the RSSI value. In theory, this can be used to trigger a push alter if the
-   signal strenght changes  - but I couldn't work out the alerts on Blynk in the time available. I would have added an alert if the RSSI value goes below 70 ( its minus 30 when beside the Pi and decreases to -90 when moved away)
+   Blynk then gives a visual representation of the RSSI value.
+
+   I then added a Blynk automation to give an 'in app' push notification when the value of RSSI went below -60
+
 
    See:  rssi.py, rssi_log.txt and upload_rssi_log.py
 
@@ -58,14 +60,19 @@ Work arounds were required.
    This changes a texgt mssage display from 'at rest' to 'movement detected'.
    The change is momentary - I need to refine that.
 
-   Programmes: test.py and device_model.py (running 'test' calls 'device_model' NB both python programmes provided by sensor vendor, test.py modified by me to target key data).
+   I also added in a separate 'Heart Beat' signal from the PI as part of this programme.  This sends an integer value to Blynk when the pi programme is connected.
+   I added a visual signal to this, so that an led changes from blue to yellow every 10 seconds, to confirm the pi is connected.
+   I then added a Blynk automation to this, again to give a push alert to the app if the signal stops. 
+
+
+   Programmes: test.py and device_model.py (running 'test' calls 'device_model' NB both python programmes provided by sensor vendor, test.py modified by me to target key data) and to include a heartbeat signal. 
 
 **Next Steps**
 Ideally
-I would combine the RSSI values and the angular movement values together- but that defeated me in the time available.
-I would also get a bluetooth sensor which could connect to two receivers (or which has a dual mac addresss).
+I would combine the RSSI values and the angular movement values together for a really reliable detection of movemeent - but that defeated me in the time available.
+I would also get a 'multipoint' bluetooth sensor which could connect to two receivers (or which has a dual mac addresss).
 I would calibrate the RSSI values and the angular ones more precisely in terms of what is the impact of standing up and moving forward - again, time did not allow. 
-I would like to build in battery strength as well - its shown on the proprietary app, but not as part of the data package. 
+I would like to build in battery strength as well - the battery strenght shown on the proprietary app, but not as part of the data package. 
 
 References:
 
