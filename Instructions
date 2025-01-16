@@ -1,0 +1,17 @@
+1) Programmes to show Pi is working
+  upload PiHere.py and SubAlertPi.py to all Pis
+  run both programmes
+  the Pi-here sends a MQTT message
+  the subscription programme monitors message receipt and sends an email if it stops
+
+
+2) RSSI strength
+  copy rssi.py, rssi_log.txt and upload_rssi_log.py to same directory
+  run rssi.py and the upload programme
+  have the sensors active and near by
+  Open Blynk device
+
+3) Angular movement and Blynk heartbeat
+  copy test.py and device_model.py to same directory
+  run test.py
+
