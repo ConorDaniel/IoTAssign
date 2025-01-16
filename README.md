@@ -67,6 +67,9 @@ I would also get a bluetooth sensor which could connect to two receivers (or whi
 I would calibrate the RSSI values and the angular ones more precisely in terms of what is the impact of standing up and moving forward - again, time did not allow. 
 I would like to build in battery strength as well - its shown on the proprietary app, but not as part of the data package. 
 
+References:
+
+Course materials, vendor software and ChatGPT (as a python reference and syntax guide) were used for this assignment 
 
    
 
