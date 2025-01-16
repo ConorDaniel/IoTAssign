@@ -8,7 +8,7 @@ MQTT_TOPIC = "test/pi_heartbeat"
 
 # Function to send "I'm here" message via MQTT
 def send_heartbeat_mqtt(client):
-    message = "I'm here, plugged in and working"  # Message to indicate the device is active
+    message = "I'm here, plugged in and working" 
     result = client.publish(MQTT_TOPIC, message)
     if result[0] == 0:
         print(f"Heartbeat sent successfully to MQTT topic '{MQTT_TOPIC}'.")
@@ -30,9 +30,9 @@ client = mqtt.Client()
 client.on_connect = on_connect
 client.on_disconnect = on_disconnect
 client.connect(MQTT_BROKER, MQTT_PORT, keepalive=60)
-client.loop_start()  # Start network loop in a separate thread
+client.loop_start()  # Start network loop
 
-# Main loop to send periodic heartbeats
+# send 'heartbeats'
 try:
     print("Starting 'I'm here' signal program...")
     while True:
