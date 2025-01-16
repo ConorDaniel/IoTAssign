@@ -3,7 +3,7 @@
 **Recap**
 
 The original idea was to enhance patient safety, by preventing falls through reliable detection of movement.  
-This was to be done by measuring the relative strength of RSSI values received from a bluettooth sensor, by two R-Pi's. 
+This was to be done by measuring the relative strength of RSSI values received from a bluetooth sensor, by two R-Pi's. 
 The idea was to create an alert when a patient moved away from their bed area, rather than just shifting position in their bed/chair, 
 thereby providing care staff with a reliable alert as to when a patient is on the move. The RSSI signal in one Pi would decrease and the signal at a 2nd Pi would increase.
 
@@ -14,9 +14,9 @@ Two bluetooth sensors were purchased, each having built in electronics that meas
 **Challenges**
 
 The sensors only provide an RSSI reading on connection - and not as part of the routine data packages which give angular/acceleration movement.
-The acceleromter movements readings are quite complicated - they give relative movement to the last position, rather than distance moved from a fixed point.
+The accelerometer movements readings are quite complicated - they give relative movement to the last position, rather than distance moved from a fixed point.
 This means they can be used to measure movement upwards or sideways, but not movement in terms of distance travelled from a bed or chair.
-The sensors can only couple with one programme on one receiver at a time - meaning it is not possible measure the RSSI strenght on two receivers from the one device at the same time.
+The sensors can only couple with one programme on one receiver at a time - meaning it is not possible measure the RSSI strength on two receivers from the one device at the same time.
 Work arounds were required.
 
 **What was achieved**
@@ -31,7 +31,7 @@ Work arounds were required.
 
     See programmes: PiHere.py and SubAlertPi.py
 
-3) RSSI Signal Strength, Blynk Diplay and Blynk App Alert
+3) RSSI Signal Strength, Blynk Display and Blynk App Alert
 
    Again, two python programmes were involved:
    
@@ -72,7 +72,7 @@ Ideally
 I would combine the RSSI values and the angular movement values together for a really reliable detection of movemeent - but that defeated me in the time available.
 I would also get a 'multipoint' bluetooth sensor which could connect to two receivers (or which has a dual mac addresss).
 I would calibrate the RSSI values and the angular ones more precisely in terms of what is the impact of standing up and moving forward - again, time did not allow. 
-I would like to build in battery strength as well - the battery strenght shown on the proprietary app, but not as part of the data package. 
+I would like to build in battery strength as well - the battery strength shown on the proprietary app, but not as part of the data package. 
 
 References:
 
