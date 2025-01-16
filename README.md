@@ -58,7 +58,7 @@ Work arounds were required.
    This changes a texgt mssage display from 'at rest' to 'movement detected'.
    The change is momentary - I need to refine that.
 
-   Programmes: test.py and device_model.py (running test calls device_model)
+   Programmes: test.py and device_model.py (running 'test' calls 'device_model' NB both python programmes provided by sensor vendor, test.py modified by me to target key data).
 
 **Next Steps**
 Ideally
